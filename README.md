@@ -1,4 +1,4 @@
-# Mossem App (mossem)
+# Mossem App (mossem-app)
 
 A Capstone Project
 
