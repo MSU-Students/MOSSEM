@@ -1,5 +1,5 @@
 {
-  "name": "mossem",
+  "name": "mossem-app",
   "version": "0.0.1",
   "description": "A Capstone Project",
   "productName": "Mossem App",
@@ -10,13 +10,11 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
-    "@vue/composition-api": "^0.6.4",
     "core-js": "^3.6.5",
     "quasar": "^1.0.0"
   },
   "devDependencies": {
-    "@quasar/app": "^2.0.0",
-    "@types/node": "^10.17.15"
+    "@quasar/app": "^2.0.0"
   },
   "browserslist": [
     "ie >= 11",
