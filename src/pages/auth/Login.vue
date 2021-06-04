@@ -85,14 +85,14 @@ export default {
 <style scoped>
 .__card {
   height: 85vh;
-  width: 800px;
+  width: 750px;
   display: flex;
   align-items: center;
   justify-items: center;
 }
 .login-photo {
   height: 85vh;
-  width: 31vw;   
+  width: 29vw;   
 }
 </style>
 
