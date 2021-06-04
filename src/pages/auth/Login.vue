@@ -1,87 +1,98 @@
 <template>
-  <q-page>
-    <div class="fullscreen sarimanok-img" :class="$q.screen.lt.md ? '' : 'row'">
-      <div v-if="!$q.screen.lt.md" class="col-7" />
-      <div class="login col-5 flex flex-center">
-        <q-card
-          flat
-          class="my-card bg-transparent q-pr-xl"
-          :class="$q.screen.lt.md ? 'absolute-center q-px-sm' : ''"
-          :style="$q.screen.lt.md ? 'width: 400px' : 'width: 450px'"
-        >
-          <q-card-section class="text-center">
-            <!-- <q-img
-              src="~assets/citlogo.png"
-              style="height: 170px; max-width: 190px"
-            /> -->
-          </q-card-section>
-
-          <q-card-section class="text-center">
-            <div class="text-h3 text-grey-9 text-weight-bold">Mossem</div>
-            <div class="text-h5 text-grey-7 text-weight-light q-pt-lg">
-              Log in to your account
-            </div>
-          </q-card-section>
-          <q-card-section class="q-gutter-md">
-            <q-input            
-              label="ID Number"
-              mask="#########"
-              color="red"
-            >
-              <template v-slot:append>
-                <q-icon name="person" />
-              </template>
-            </q-input>
-            <q-input
-              label="Password"
-              v-model="password"
-              :type="isPwd ? 'password' : 'text'"
-              hint="Password with toggle"
-              color="red"
-            >
-              <template v-slot:append>
-                <q-icon
-                  :name="isPwd ? 'visibility_off' : 'visibility'"
-                  class="cursor-pointer"
-                  @click="isPwd = !isPwd"
-                />
-              </template>
-            </q-input>
-          </q-card-section>
-          <q-card-actions class="q-mx-sm q-pt-md" align="center">
-            <q-btn
-              class="full-width"
-              label="Login"
-              color="red"
-              size="lg"
-              to="/s/home"
-              push
-            />
-          </q-card-actions>
-        </q-card>
+  <q-page class="fixed-center q-pt-xl">
+    <q-card class="__card row bg-red text-white q-pa-xl">
+      <div class="col-6">
+        <q-card-section>
+           <q-img src="~assets/Login Pic.png"
+           class="login-photo"
+           style="position:relative; right :65px; top:-64px; bottom: 400px"
+           />
+        </q-card-section>
       </div>
-    </div>
+
+      <div 
+        class="col-6"
+        style="position:relative; left:40px; top:-64px; bottom: 400px;"
+
+      >
+        <div class="text-center text-h4">
+          This is Login!
+        </div>
+
+        <q-card-section class="q-gutter-y-md">
+          <q-input
+            v-model="user.username"
+            label="Username"
+            bg-color="white"
+            color="red"
+            rounded
+            standout="bg-red text-white"
+          >
+            <template v-slot:prepend>
+              <q-icon name="person" />
+            </template>
+          </q-input>
+
+          <q-input
+            v-model="user.password"
+            label="Password"
+            bg-color="white"
+            color="red"
+            :type="hidePassword ? '' : 'password'"
+            rounded
+            standout="bg-red text-white"
+          >
+            <template v-slot:prepend>
+              <q-icon name="lock" />
+            </template>
+
+            <template v-slot:append>
+              <q-icon
+                :name="hidePassword ? 'visibility' : 'visibility_off'"
+                class="cursor-pointer"
+                @click="hidePassword = !hidePassword"
+              />
+            </template>
+          </q-input>
+        </q-card-section>
+
+        <q-card-actions>
+          <q-btn
+            class="full-width"
+            label="login"
+            color="white"
+            text-color="red"
+            to="/"
+          >
+          </q-btn>
+        </q-card-actions>
+      </div>
+    </q-card>
   </q-page>
 </template>
 
 <script>
 export default {
-  name: "LoginPage",
-
   data() {
     return {
-      password: "",
-      isPwd: true
+      user: {},
+      hidePassword: false
     };
   }
 };
 </script>
 
 <style scoped>
-.sarimanok-img {
-  background-image: url("../../assets/sarimanokfullnew.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
+.__card {
+  height: 85vh;
+  width: 750px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.login-photo {
+  height: 85vh;
+  width: 29vw;   
 }
 </style>
+
