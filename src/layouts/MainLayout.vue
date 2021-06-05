@@ -7,13 +7,14 @@
         <!-- Title -->
         <q-toolbar-title>Log in</q-toolbar-title>
         <!-- Menu -->
-          <q-btn 
-            v-if="this.$route.name != 'login-page'"
-            icon="person" 
-            label="Account" 
-            color="white" 
-            text-color="red">
-        <q-menu fit :offset="[0, 10]">
+        <q-btn
+          v-if="this.$route.name != 'login-page'"
+          icon="person"
+          label="Account"
+          color="white"
+          text-color="red"
+        >
+          <q-menu fit :offset="[0, 10]">
             <q-btn
               class="full-width"
               label="logout"
@@ -24,10 +25,19 @@
             </q-btn>
           </q-menu>
         </q-btn>
+
+        <q-btn
+          v-if="this.$route.name != 'login-page'"
+          icon="person"
+          label="Home"
+          color="white"
+          text-color="red"
+          to="/"
+        >
+        </q-btn>
         <!-- menu end -->
       </q-toolbar>
     </q-header>
-    This Is MainLayout
     <q-page-container>
       <router-view> </router-view>
     </q-page-container>
