@@ -10,7 +10,7 @@ const routes = [
     children: [
       {
         path: "/",
-        name: "Landing-page",
+        name: "landing-page",
         component: Landingpage,
       }       
     ],
@@ -25,8 +25,8 @@ const routes = [
         component: Login,
       },
       {
-        path: "RepositoryPage",
-        name: "Repository-page",
+        path: "repositorypage",
+        name: "repository-page",
         component: Repositorypage,
       }
   ]
