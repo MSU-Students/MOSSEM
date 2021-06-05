@@ -1,25 +1,22 @@
 <template>
-  <q-page class="fixed-center q-pt-xl">
-    <q-card class="__card row bg-red text-white q-pa-xl">
-      <div class="col-6">
-        <q-card-section>
-           <q-img src="~assets/Login Pic.png"
-           class="login-photo"
-           style="position:relative; right :65px; top:-64px; bottom: 400px"
-           />
-        </q-card-section>
-      </div>
+  <q-page class="flex flex-center q-px-md">
+    <q-card
+      class="__card bg-red text-white flex flex-center "
+      :class="$q.screen.lt.md ? '' : 'row'"
+      :style="$q.screen.lt.md ? '' : 'width: 800px;'"
+    >
+      <q-img
+        v-if="!$q.screen.lt.md"
+        src="~assets/Login Pic.png"
+        class="col-6 login-photo"
+      />
 
-      <div 
-        class="col-6"
-        style="position:relative; left:40px; top:-64px; bottom: 400px;"
-
-      >
+      <div class="q-px-xl" :class="$q.screen.lt.md ? ' q-pa-xl' : 'login-field'">
         <div class="text-center text-h4">
           This is Login!
         </div>
 
-        <q-card-section class="q-gutter-y-md">
+        <q-card-section class='q-gutter-y-md'>
           <q-input
             v-model="user.username"
             label="Username"
@@ -62,7 +59,7 @@
             label="login"
             color="white"
             text-color="red"
-            to="/"
+            to="/Repositorypage"
           >
           </q-btn>
         </q-card-actions>
@@ -83,16 +80,12 @@ export default {
 </script>
 
 <style scoped>
-.__card {
-  height: 85vh;
-  width: 800px;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-}
 .login-photo {
-  height: 85vh;
-  width: 31vw;   
+  height: 100%;
+  width: 50%;
+}
+.login-field {
+  height: 100%;
+  width: 50%;
 }
 </style>
-
