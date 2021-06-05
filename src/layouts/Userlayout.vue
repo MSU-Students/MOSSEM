@@ -1,11 +1,10 @@
 <template>
-  <q-layout view="hhh lpR fff" >
-
-    <q-header reveal class="bg-transparent text-orange" height-hint="98">
+  <q-layout>
+    <q-header reveal class="bg-transparent text-white">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
           </q-avatar>
           Landing Page
         </q-toolbar-title>
@@ -32,28 +31,23 @@
         </q-card-actions> -->
     </q-header>
 
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-
     <q-footer class="bg-grey-8 text-white">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
           </q-avatar>
           Landing Page
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
+
+    <q-page-container class='user-layout'>
+      <router-view />
+    </q-page-container>
   </q-layout>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-    }
-  }
-}
+export default {};
 </script>
