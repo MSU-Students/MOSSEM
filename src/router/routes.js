@@ -1,9 +1,21 @@
+import UserLayout from "src/layouts/UserLayout.vue";
+import Landingpage from "src/pages/LandingPage.vue";
 import MainLayout from "src/layouts/MainLayout.vue";
 import Login from "src/pages/auth/Login.vue";
-import Landingpage from "src/pages/Landingpage.vue";
-import UserLayout from "src/layouts/UserLayout.vue";
+import Repositorypage from "src/pages/RepositoryPage.vue";
 const routes = [
   {
+    path: "/",
+    component: UserLayout,
+    children: [
+      {
+        path: "/",
+        name: "Landing-page",
+        component: Landingpage,
+      }       
+    ],
+  },
+  { 
     path: "/",
     component: MainLayout,
     children: [
@@ -11,19 +23,12 @@ const routes = [
         path: "login",
         name: "login-page",
         component: Login,
+      },
+      {
+        path: "RepositoryPage",
+        name: "Repository-page",
+        component: Repositorypage,
       }
-       
-    ],
-  },
-{ 
-  path: "/",
-  component: UserLayout,
-  children: [
-    {
-      path: "Landingpage",
-      name: "Landing-page",
-      component: Landingpage,
-    }
   ]
 },
   // Always leave this as last one,
