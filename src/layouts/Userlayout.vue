@@ -8,8 +8,20 @@
           </q-avatar>
           Landing Page
         </q-toolbar-title>
+        <q-space />
+        <q-btn
+          icon="person"
+          flat
+          color="orange"
+          label="Sining Pananadem"
+          text-color="white"
+          to="repositorypage"
+        >
+        </q-btn>
+
+        <q-btn icon="person" flat label="Login" text-color="white" to="login">
+        </q-btn>
       </q-toolbar>
- 
     </q-header>
 
     <q-footer class="bg-grey-8 text-white">
@@ -23,7 +35,7 @@
       </q-toolbar>
     </q-footer>
 
-    <q-page-container class='user-layout'>
+    <q-page-container class="user-layout">
       <router-view />
     </q-page-container>
   </q-layout>
