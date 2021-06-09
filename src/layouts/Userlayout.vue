@@ -15,7 +15,8 @@
           color="orange"
           label="Sining Pananadem"
           text-color="white"
-          to="repositorypage">
+          to="repositorypage"
+        >
         </q-btn>
 
         <q-btn icon="person" flat label="Login" text-color="white" to="login">

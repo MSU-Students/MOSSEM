@@ -1,104 +1,125 @@
 <template>
-  <q-layout>
+  <q-layout view="hHh LpR fFf">
     <!-- header -->
-    <q-header class="bg-red">
-      <q-toolbar>
-        <q-btn flat @click="drawer = !drawer" round dense icon="menu"> </q-btn>
-        <!-- Title -->
-        <q-toolbar-title>Log in</q-toolbar-title>
-        <!-- Menu -->
-        <q-btn
-          v-if="this.$route.name != 'login-page'"
-          icon="person"
-          label="Account"
-          color="white"
-          text-color="red"
-        >
-          <q-menu fit :offset="[0, 10]">
-            <q-btn
-              class="full-width"
-              label="logout"
-              color="red"
-              text-color="white"
-              to="/login"
-            >
-            </q-btn>
-          </q-menu>
-        </q-btn>
-
-        <q-btn
-          v-if="this.$route.name != 'login-page'"
-          icon="person"
-          label="Home"
-          color="white"
-          text-color="red"
-          to="/"
-        >
-        </q-btn>
-        <!-- menu end -->
-      </q-toolbar>
+    <q-header v-if="this.$route.name != 'login-page'" elevated class="bg-red">
+      <q-img
+        src="~assets/Tribal Pattern.jpg"
+        :style="
+          $q.screen.lt.md ? 'height: 100vh' : 'height: calc(17.5vh - 50px);'
+        "
+      >
+        <q-toolbar>
+          <q-btn flat @click="drawer = !drawer" round dense icon="menu">
+          </q-btn>
+          <!-- Title -->
+          <q-toolbar-title>Sining Pananadem</q-toolbar-title>
+          <!-- Menu -->
+          <q-btn
+            outline 
+            v-if="this.$route.name != 'login-page'"
+            icon="person"
+            label="Account"
+            text-color="red"
+          >
+            <q-menu fit :offset="[0, 10]">
+              <q-btn
+                class="full-width"
+                label="logout"
+                color="red"
+                text-color="white"
+                to="/login"
+              >
+              </q-btn>
+            </q-menu>
+          </q-btn>
+          <q-btn
+            flat
+            v-if="this.$route.name != 'login-page'"
+            icon="home"
+            label="Home"
+            color="orange"
+            text-color="white"
+            to="/"
+          >
+          </q-btn>
+          <!-- menu end -->
+        </q-toolbar>
+      </q-img>
     </q-header>
 
     <q-drawer
+      v-if="this.$route.name != 'login-page'"
       v-model="drawer"
       show-if-above
       :mini="miniState"
       @mouseover="miniState = false"
       @mouseout="miniState = true"
-      :width="200"
+      :width="250"
       :breakpoint="500"
-      bordered
-      content-class="bg-red"
+      elevated
     >
       <q-scroll-area class="fit">
-        <q-list padding>
-          <q-item clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="inbox"               />
-            </q-item-section>
+        <q-img
+          class="absolute-top"
+          src="~assets/Tribal Pattern.jpg"
+          :style="
+            $q.screen.lt.md ? 'height: 100vh' : 'height: calc(99vh - 50px)'
+          "
+        >
+          <div
+            class="absolute-bottom "
+            style="height: calc(100% - 0px); margin-top: 0px; border-right: 0px solid #ddd"
+          >
+            <q-list padding>
+              <q-item dense to="" clickable v-ripple>
+                <q-item-section avatar>
+                   <q-img style="height: 70px; width: 70px" src="~assets/icon.png" />
+                </q-item-section>
 
-            <q-item-section>
-              Videos
-            </q-item-section>
-          </q-item>
+                <q-item-section class="text-h6"> 
+                  Dances
+                </q-item-section>
+              </q-item>
 
-          <q-separator />
+              <q-separator />
 
-          <q-item active clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="star" />
-            </q-item-section>
+              <q-item active clickable v-ripple>
+                <q-item-section avatar>
+                   <q-img style="height: 70px; width: 70px" src="~assets/icon.png" />
+                </q-item-section>
 
-            <q-item-section>
-              Songs
-            </q-item-section>
-          </q-item>
+                <q-item-section class="text-h6">
+                  Songs
+                </q-item-section>
+              </q-item>
 
-          <q-separator />
+              <q-separator />
 
-          <q-item clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="send" />
-            </q-item-section>
+              <q-item clickable v-ripple>
+                <q-item-section avatar class="justify-start">
+                   <q-img style="height: 70px; width: 70px" src="~assets/icon.png" />
+                </q-item-section>
 
-            <q-item-section>
-              Instruments
-            </q-item-section>
-          </q-item>
+                <q-item-section  class="text-h6">
+                  Instruments
+                </q-item-section>
+              </q-item>
 
-          <q-separator />
+              <q-separator />
 
-          <q-item clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="drafts" />
-            </q-item-section>
+              <q-item clickable v-ripple>
+                <q-item-section avatar>
+                   <q-img style="height: 70px; width: 70px" src="~assets/icon.png" />
+                </q-item-section>
 
-            <q-item-section>
-              Pictures
-            </q-item-section>
-          </q-item>
-          <q-separator />
-        </q-list>
+                <q-item-section class="text-h6">
+                  Pictures
+                </q-item-section>
+              </q-item>
+              <q-separator />
+            </q-list>
+          </div>
+        </q-img>
       </q-scroll-area>
     </q-drawer>
 
@@ -119,4 +140,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>
