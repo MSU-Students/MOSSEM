@@ -8,14 +8,17 @@
           $q.screen.lt.md ? 'height: 100vh' : 'height: calc(17.5vh - 50px);'
         "
       >
-        <q-toolbar>
-          <q-btn flat @click="drawer = !drawer" round dense icon="menu">
-          </q-btn>
+        <q-toolbar >
+          <!-- <q-btn flat @click="drawer = !drawer" round dense icon="menu">
+          </q-btn> -->
           <!-- Title -->
+          <q-avatar  size="42px">
+            <img src="~assets/LOGO.png" />
+          </q-avatar>
           <q-toolbar-title>Sining Pananadem</q-toolbar-title>
           <!-- Menu -->
           <q-btn
-            outline 
+            outline
             v-if="this.$route.name != 'login-page'"
             icon="person"
             label="Account"
@@ -73,10 +76,13 @@
             <q-list padding>
               <q-item dense to="" clickable v-ripple>
                 <q-item-section avatar>
-                   <q-img style="height: 70px; width: 70px" src="~assets/icon.png" />
+                  <q-img
+                    style="height: 70px; width: 70px"
+                    src="~assets/icon.png"
+                  />
                 </q-item-section>
 
-                <q-item-section class="text-h6"> 
+                <q-item-section class="text-h6">
                   Dances
                 </q-item-section>
               </q-item>
@@ -85,7 +91,10 @@
 
               <q-item active clickable v-ripple>
                 <q-item-section avatar>
-                   <q-img style="height: 70px; width: 70px" src="~assets/icon.png" />
+                  <q-img
+                    style="height: 70px; width: 70px"
+                    src="~assets/icon.png"
+                  />
                 </q-item-section>
 
                 <q-item-section class="text-h6">
@@ -97,10 +106,13 @@
 
               <q-item clickable v-ripple>
                 <q-item-section avatar class="justify-start">
-                   <q-img style="height: 70px; width: 70px" src="~assets/icon.png" />
+                  <q-img
+                    style="height: 70px; width: 70px"
+                    src="~assets/icon.png"
+                  />
                 </q-item-section>
 
-                <q-item-section  class="text-h6">
+                <q-item-section class="text-h6">
                   Instruments
                 </q-item-section>
               </q-item>
@@ -109,7 +121,10 @@
 
               <q-item clickable v-ripple>
                 <q-item-section avatar>
-                   <q-img style="height: 70px; width: 70px" src="~assets/icon.png" />
+                  <q-img
+                    style="height: 70px; width: 70px"
+                    src="~assets/icon.png"
+                  />
                 </q-item-section>
 
                 <q-item-section class="text-h6">
