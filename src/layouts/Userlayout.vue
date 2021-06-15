@@ -6,7 +6,7 @@
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
           </q-avatar>
-          Landing Page
+          Home
         </q-toolbar-title>
         <q-space />
         <q-btn
@@ -30,7 +30,7 @@
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
           </q-avatar>
-          Landing Page
+          Home
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>

@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh LpR fFf">
     <!-- header -->
-    <q-header v-if="this.$route.name != 'login-page'" elevated class="bg-red">
+    <q-header v-if="this.$route.name != 'login-page'" elevated class="bg-transparent">
       <q-img
         src="~assets/Tribal Pattern.jpg"
         :style="
@@ -13,7 +13,8 @@
           </q-btn> -->
           <!-- Title -->
           <q-avatar size="42px">
-            <img src="~assets/LOGO.png" />
+            <img 
+            src="~assets/SP logo1.png" />
           </q-avatar>
           <q-toolbar-title>Sining Pananadem</q-toolbar-title>
           <!-- Menu -->

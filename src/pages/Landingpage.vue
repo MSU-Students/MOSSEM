@@ -2,9 +2,9 @@
   <q-page>
     <div class="q-gutter-md">
       <div class="row justify-between">
-        <q-parallax 
+        <q-parallax
           src="~assets/SP logo44(cover).jpg"
-            :height="750"        >
+            :height="750">
           <h1 class="text-white">
             Sining Pananadem
           </h1>
