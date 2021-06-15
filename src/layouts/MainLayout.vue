@@ -8,11 +8,11 @@
           $q.screen.lt.md ? 'height: 100vh' : 'height: calc(17.5vh - 50px);'
         "
       >
-        <q-toolbar >
+        <q-toolbar>
           <!-- <q-btn flat @click="drawer = !drawer" round dense icon="menu">
           </q-btn> -->
           <!-- Title -->
-          <q-avatar  size="42px">
+          <q-avatar size="42px">
             <img src="~assets/LOGO.png" />
           </q-avatar>
           <q-toolbar-title>Sining Pananadem</q-toolbar-title>
@@ -74,7 +74,15 @@
             style="height: calc(100% - 0px); margin-top: 0px; border-right: 0px solid #ddd"
           >
             <q-list padding>
-              <q-item dense to="" clickable v-ripple>
+              <q-item
+                dense
+                to="Dances"
+                clickable
+                v-ripple
+                :active="link === 'Dances'"
+                @click="link = 'Dances'"
+                active-class="my-menu-link"
+              >
                 <q-item-section avatar>
                   <q-img
                     style="height: 70px; width: 70px"
@@ -89,7 +97,14 @@
 
               <q-separator />
 
-              <q-item active clickable v-ripple>
+              <q-item
+                to="Songs"
+                clickable
+                v-ripple
+                :active="link === 'Songs'"
+                @click="link = 'Songs'"
+                active-class="my-menu-link"
+              >
                 <q-item-section avatar>
                   <q-img
                     style="height: 70px; width: 70px"
@@ -104,8 +119,15 @@
 
               <q-separator />
 
-              <q-item clickable v-ripple>
-                <q-item-section avatar class="justify-start">
+              <q-item
+                to="Instruments"
+                clickable
+                v-ripple
+                :active="link === 'Instruments'"
+                @click="link = 'Instruments'"
+                active-class="my-menu-link"
+              >
+                <q-item-section avatar>
                   <q-img
                     style="height: 70px; width: 70px"
                     src="~assets/icon.png"
@@ -119,7 +141,14 @@
 
               <q-separator />
 
-              <q-item clickable v-ripple>
+              <q-item
+                to="Pictures"
+                clickable
+                v-ripple
+                :active="link === 'Pictures'"
+                @click="link = 'Pictures'"
+                active-class="my-menu-link"
+              >
                 <q-item-section avatar>
                   <q-img
                     style="height: 70px; width: 70px"
@@ -149,10 +178,18 @@ export default {
   data() {
     return {
       drawer: false,
-      miniState: true
-    };
+      miniState: true,
+      link: "Songs",
+      link: "Pictures",
+      link: "Instruments",
+      link: "Dances"
+};
   }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.my-menu-link {
+  color: orange;
+}
+</style>

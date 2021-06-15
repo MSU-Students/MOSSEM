@@ -15,7 +15,7 @@
           color="orange"
           label="Sining Pananadem"
           text-color="white"
-          to="repositorypage"
+          to="Dances"
         >
         </q-btn>
 

@@ -59,7 +59,7 @@
             label="login"
             color="white"
             text-color="red"
-            to="/Repositorypage"
+            to="/Dances"
           >
           </q-btn>
         </q-card-actions>

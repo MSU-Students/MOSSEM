@@ -3,6 +3,10 @@ import Landingpage from "src/pages/LandingPage.vue";
 import MainLayout from "src/layouts/MainLayout.vue";
 import Login from "src/pages/auth/Login.vue";
 import Repositorypage from "src/pages/RepositoryPage.vue";
+import Dances from "src/pages/Drawer/Dances.vue";
+import Instruments from "src/pages/Drawer/Instruments.vue";
+import Songs from "src/pages/Drawer/Songs.vue";
+import Pictures from "src/pages/Drawer/Pictures.vue";
 const routes = [
   {
     path: "/",
@@ -28,6 +32,26 @@ const routes = [
         path: "repositorypage",
         name: "repository-page",
         component: Repositorypage,
+      },
+      {
+        path: "Dances",
+        name: "Dances-page",
+        component: Dances,
+      },
+      {
+        path: "Songs",
+        name: "Songs-page",
+        component: Songs,
+      },
+      {
+        path: "Instruments",
+        name: "Instruments-page",
+        component: Instruments,
+      },
+      {
+        path: "Pictures",
+        name: "Pictures-page",
+        component: Pictures,
       }
   ]
 },
