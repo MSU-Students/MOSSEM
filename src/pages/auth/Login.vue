@@ -1,19 +1,25 @@
 <template>
-  <q-page class="flex flex-center q-px-md">
+  <q-page class="flex flex-center bg-faded q-px-md">
     <q-card
-      class="__card bg-red text-white flex flex-center "
+      class="__card bg-primary shadow-24 text-white flex flex-center"
       :class="$q.screen.lt.md ? '' : 'row'"
       :style="$q.screen.lt.md ? '' : 'width: 800px;'"
     >
       <q-img
+        transition = "slide-left"
         v-if="!$q.screen.lt.md"
-        src="~assets/Login Pic.png"
+        src="~assets/SP Login1.jpg"
         class="col-6 login-photo"
       />
 
       <div class="q-px-xl" :class="$q.screen.lt.md ? ' q-pa-xl' : 'login-field'">
-        <div class="text-center text-h4">
-          This is Login!
+        <q-img
+        transition="slide-up"
+        style="max-width: 400px; height: 170px;"
+        src="~assets/SP logo1.png"
+      />
+        <div class="text-center text-h3">
+          Login
         </div>
 
         <q-card-section class='q-gutter-y-md'>
@@ -23,7 +29,7 @@
             bg-color="white"
             color="red"
             rounded
-            standout="bg-red text-white"
+            standout="bg-primary text-white"
           >
             <template v-slot:prepend>
               <q-icon name="person" />
@@ -37,7 +43,7 @@
             color="red"
             :type="hidePassword ? '' : 'password'"
             rounded
-            standout="bg-red text-white"
+            standout="bg-primary text-white"
           >
             <template v-slot:prepend>
               <q-icon name="lock" />
@@ -58,7 +64,7 @@
             class="full-width"
             label="login"
             color="white"
-            text-color="red"
+            text-color="primary"
             to="/Dances"
           >
           </q-btn>
