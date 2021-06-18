@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh LpR fFf">
+  <q-layout class="bg-img" view="hHh LpR fFf">
     <!-- header -->
     <q-header v-if="this.$route.name != 'login-page'" elevated class="bg-transparent">
       <q-img
@@ -23,13 +23,13 @@
             v-if="this.$route.name != 'login-page'"
             icon="person"
             label="Account"
-            text-color="red"
+            text-color="white"
           >
             <q-menu fit :offset="[0, 10]">
               <q-btn
                 class="full-width"
                 label="logout"
-                color="red"
+                color="primary"
                 text-color="white"
                 to="/login"
               >
@@ -80,7 +80,6 @@
                 to="Dances"
                 clickable
                 v-ripple
-                :active="link === 'Dances'"
                 @click="link = 'Dances'"
                 active-class="my-menu-link"
               >
@@ -192,5 +191,8 @@ export default {
 <style scoped>
 .my-menu-link {
   color: orange;
+}
+.bg-img {
+ Background-image: url("~assets/BackgroundSarimanok.png");
 }
 </style>
