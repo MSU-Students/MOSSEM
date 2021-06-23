@@ -1,5 +1,5 @@
 <template>
-  <q-page transition="" class="q-px-lg flex flex-center">
+  <q-page class="q-px-lg flex flex-center">
     <div class="q-gutter-md">
       <q-carousel
         v-model="slide"
@@ -39,38 +39,16 @@
             @click="onClick"
           />
         </template>
-        <q-carousel-slide name="style">
+        <q-carousel-slide
+          v-for="(dances, index) in dancesContent"
+          :key="index"
+          :name="dances.videoName"
+        >
           <div class="q-pa-md">
-            <q-video
-              class="absolute-full"
-              src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
-            />
+            <q-video class="absolute-full" :src="dances.video" />
           </div>
         </q-carousel-slide>
-        <q-carousel-slide name="tv" class="column no-wrap flex-center">
-          <div class="q-pa-md">
-            <q-video
-              class="absolute-full"
-              src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
-            />
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="layers" class="column no-wrap flex-center">
-          <div class="q-pa-md">
-            <q-video
-              class="absolute-full"
-              src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
-            />
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="map" class="column no-wrap flex-center">
-          <div class="q-pa-md">
-            <q-video
-              class="absolute-full"
-              src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
-            />
-          </div>
-        </q-carousel-slide>
+
         <template v-slot:control>
           <q-carousel-control position="bottom-right" :offset="[18, 18]">
             <q-btn
@@ -86,15 +64,19 @@
         </template>
       </q-carousel>
 
-      <q-card style="width: 80vw">
-        <q-card-section>
-          <div class="text-h6">Our Changing Planet</div>
-          <div class="text-subtitle2">by John Doe</div>
-        </q-card-section>
-        <q-card-section>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </q-card-section>
-      </q-card>
+      <template v-for="(dances, index) in dancesContent">
+        <q-card
+          class="bg-img"
+          v-if="dances.videoName == slide"
+          :key="index"
+          style="width: 80vw"
+        >
+          <q-card-section>
+            <div class="text-h2 text-center text-white">{{dances.videoName}}</div>
+            <div style="font-size: 1.5em" class=" text-center text-white">{{dances.videoDesc}}</div>
+          </q-card-section>
+        </q-card>
+      </template>
     </div>
   </q-page>
 </template>
@@ -103,16 +85,38 @@
 export default {
   data() {
     return {
-      slide: "style",
-      lorem:
-        "Maranao Tribe in particular is known to be a Culture that is maintaining their ethnic identity until now in this modern generation, some of Maranao people know their Culture and they know some of its practices and distinct things, the Culture of the Maranao tribe and  its practices is being passed down from generation to generation to the young Maranaos. ",
-      fullscreen: false
+      slide: "Maranao",
+      fullscreen: false,
+      dancesContent: [
+        {
+          video: "https://www.youtube.com/embed/k3_tw44QsZQ?rel=0",
+          videoName: "Maranao",
+          videoBy: "Matin",
+          videoDesc: "1Maranao Tribe in particular is known to be a Culture that is maintaining their ethnic identity until now in this modern generation, some of Maranao people know their Culture and they know some of its practices and distinct things, the Culture of the Maranao tribe and  its practices is being passed down from generation to generation to the young Maranaos. "
+        },
+        {
+          video: "https://www.youtube.com/embed/k3_tw44QsZQ?rel=0",
+          videoName: "Map",
+          videoBy: "Matz",
+          videoDesc: "2Maranao Tribe in particular is known to be a Culture that is maintaining their ethnic identity until now in this modern generation, some of Maranao people know their Culture and they know some of its practices and distinct things, the Culture of the Maranao tribe and  its practices is being passed down from generation to generation to the young Maranaos. "
+        }
+      ]
     };
+  },
+  methods: {
+    moveCarousel(newVal, oldVal) {
+      console.log(newVal, oldVal);
+      this.title = newVal;
+    }
   }
 };
 </script>
 
 <style scoped>
+.page-pos {
+  position: fixed;
+}
+
 .bg-img {
   background-image: url("~assets/background/TribalPatternWithEffect.jpg");
 }

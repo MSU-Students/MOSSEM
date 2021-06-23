@@ -1,11 +1,7 @@
 <template>
   <q-layout class="bg-img" view="hHh LpR fFf">
     <!-- header -->
-    <q-header
-      v-if="this.$route.name != 'login-page'"
-      elevated
-      class="header-bg"
-    >
+    <q-header elevated class="header-bg">
       <q-toolbar>
         <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
 
@@ -170,13 +166,14 @@
       </q-scroll-area>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="custom-page-container">
       <transition
-      appear
-      enter-active-class="animated fadeInLeft"
-      leave-active-class="animated fadeOutRight">
-      <router-view> </router-view>
-    </transition>
+        appear
+        enter-active-class="animated fadeInLeft"
+        leave-active-class="animated fadeOutRight"
+      >
+        <router-view> </router-view>
+      </transition>
     </q-page-container>
   </q-layout>
 </template>
@@ -215,5 +212,4 @@ export default {
   background-position-y: center;
   box-shadow: 0 0 0 1000px rgb(0 0 0 / 45%) inset;
 }
-
 </style>
