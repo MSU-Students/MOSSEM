@@ -16,7 +16,7 @@
           class="q-ma-sm shadow-24"
           @click="showDialog(index)"
         >
-          <img src="~assets/Tribal Pattern.jpg" />
+          <img src="~assets/background/TribalPattern.jpg" />
 
           <q-card-section>
             <div class="text-h6">Tribal Pattern #{{ index }}</div>
@@ -47,7 +47,7 @@
         </q-card-section>
 
         <q-card-section class="q-pt-none">
-          <img src="~assets/Tribal Pattern.jpg" style="max-width:100%" />
+          <img src="~assets/background/TribalPattern.jpg" style="max-width:100%" />
         </q-card-section>
       </q-card>
     </q-dialog>

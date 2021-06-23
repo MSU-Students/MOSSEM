@@ -1,7 +1,8 @@
 <template>
   <q-page class="flex flex-center bg-img q-px-md">
+    
     <q-card
-      class="__card shadow-24 text-white flex flex-center"
+      class="shadow-24 text-white  flex flex-center"
       style="background: linear-gradient(to top right, #fe7a15 55%, #d9d9d9 110%);"
       :class="$q.screen.lt.md ? '' : 'row'"
       :style="$q.screen.lt.md ? '' : 'width: 800px;'"
@@ -9,7 +10,7 @@
       <q-img
         transition = "slide-left"
         v-if="!$q.screen.lt.md"
-        src="~assets/SP Login1.jpg"
+        src="~assets/background/splogincover.jpg"
         class="col-6 login-photo"
       />
 
@@ -17,7 +18,7 @@
         <q-img
         transition="slide-up"
         style="max-width: 400px; height: 170px;"
-        src="~assets/SP logo1.png"
+        src="~assets/logo/splogo.png"
       />
         <div class="text-center text-h3">
           Login
@@ -62,6 +63,7 @@
 
         <q-card-actions>
           <q-btn
+            icon="login"
             class="full-width"
             label="login"
             color="white"
@@ -96,6 +98,6 @@ export default {
   width: 50%;
 }
 .bg-img {
- Background-image: url("~assets/Background.jpg");
+ Background-image: url("~assets/background/loginbackground.jpg");
 }
 </style>

@@ -1,17 +1,19 @@
 <template>
-  <q-layout>
-    <q-header reveal class="bg-transparent text-white">
+  <q-layout view="hHh lpR fff">
+    <q-header class="backdrop-filter text-white">
       <q-toolbar>
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
+          <q-avatar style="font-size: 4.3em">
+            <img src="~assets/logo/splogo.png" />
           </q-avatar>
           Home
         </q-toolbar-title>
         <q-space />
         <q-btn
-          icon="person"
+          icon="dashboard"
           flat
+          dense
+          style="font-size: 1.2em"
           color="orange"
           label="Sining Pananadem"
           text-color="white"
@@ -19,16 +21,25 @@
         >
         </q-btn>
 
-        <q-btn icon="person" flat label="Login" text-color="white" to="login">
+        <q-btn
+          style="font-size: 1.2em"
+          icon="person"
+          flat
+          label="Login"
+          text-color="white"
+          to="login"
+        >
         </q-btn>
       </q-toolbar>
     </q-header>
 
-    <q-footer class="bg-grey-8 text-white">
+    <q-footer
+      class="backdrop-filter"
+    >
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
+            <img src="~assets/logo/splogo.png" />
           </q-avatar>
           Home
         </q-toolbar-title>
@@ -44,3 +55,11 @@
 <script>
 export default {};
 </script>
+
+<style scoped>
+.backdrop-filter {
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  background-color: #fe7a1500;
+}
+</style>
