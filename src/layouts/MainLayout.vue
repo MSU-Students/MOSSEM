@@ -1,54 +1,71 @@
 <template>
   <q-layout class="bg-img" view="hHh LpR fFf">
     <!-- header -->
-    <q-header v-if="this.$route.name != 'login-page'" elevated class="bg-transparent">
-      <q-img
-        src="~assets/Tribal Pattern.jpg"
-        :style="
-          $q.screen.lt.md ? 'height: 100vh' : 'height: calc(17.5vh - 50px);'
-        "
-      >
-        <q-toolbar>
-          <!-- <q-btn flat @click="drawer = !drawer" round dense icon="menu">
-          </q-btn> -->
-          <!-- Title -->
-          <q-avatar size="42px">
-            <img 
-            src="~assets/SP logo1.png" />
-          </q-avatar>
-          <q-toolbar-title>Sining Pananadem</q-toolbar-title>
-          <!-- Menu -->
-          <q-btn
-            outline
-            v-if="this.$route.name != 'login-page'"
-            icon="person"
-            label="Account"
-            text-color="white"
-          >
-            <q-menu fit :offset="[0, 10]">
-              <q-btn
-                class="full-width"
-                label="logout"
-                color="primary"
-                text-color="white"
-                to="/login"
-              >
-              </q-btn>
-            </q-menu>
-          </q-btn>
-          <q-btn
-            flat
-            v-if="this.$route.name != 'login-page'"
-            icon="home"
-            label="Home"
-            color="orange"
-            text-color="white"
-            to="/"
-          >
-          </q-btn>
-          <!-- menu end -->
-        </q-toolbar>
-      </q-img>
+    <q-header
+      v-if="this.$route.name != 'login-page'"
+      elevated
+      class="header-bg"
+    >
+      <q-toolbar>
+        <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+
+        <!-- Title -->
+        <q-avatar size="42px">
+          <img src="~assets/logo/splogo.png" />
+        </q-avatar>
+
+        <q-toolbar-title>Sining Pananadem</q-toolbar-title>
+        <q-input
+          dark
+          dense
+          outline
+          standout
+          label="Search"
+          v-model="text"
+          input-class="text-right"
+          class="q-mr-md"
+        >
+          <template v-slot:append>
+            <q-icon v-if="text === ''" name="search" />
+            <q-icon
+              v-else
+              name="clear"
+              class="cursor-pointer"
+              @click="text = ''"
+            />
+          </template>
+        </q-input>
+        <!-- Menu -->
+        <q-btn
+          outline
+          v-if="this.$route.name != 'login-page'"
+          icon="person"
+          label="Account"
+          text-color="white"
+        >
+          <q-menu fit :offset="[0, 10]">
+            <q-btn
+              class="full-width"
+              label="logout"
+              color="primary"
+              text-color="white"
+              to="/login"
+            >
+            </q-btn>
+          </q-menu>
+        </q-btn>
+        <q-btn
+          flat
+          v-if="this.$route.name != 'login-page'"
+          icon="home"
+          label="Home"
+          color="orange"
+          text-color="white"
+          to="/"
+        >
+        </q-btn>
+        <!-- menu end -->
+      </q-toolbar>
     </q-header>
 
     <q-drawer
@@ -62,108 +79,94 @@
       :breakpoint="500"
       elevated
     >
-      <q-scroll-area class="fit">
-        <q-img
-          class="absolute-top"
-          src="~assets/Tribal Pattern.jpg"
-          :style="
-            $q.screen.lt.md ? 'height: 100vh' : 'height: calc(99vh - 50px)'
-          "
-        >
-          <div
-            class="absolute-bottom "
-            style="height: calc(100% - 0px); margin-top: 0px; border-right: 0px solid #ddd"
-          >
-            <q-list padding>
-              <q-item
-                dense
-                to="Dances"
-                clickable
-                v-ripple
-                @click="link = 'Dances'"
-                active-class="my-menu-link"
-              >
-                <q-item-section avatar>
-                  <q-img
-                    style="height: 70px; width: 70px"
-                    src="~assets/icon.png"
-                  />
-                </q-item-section>
+      <q-scroll-area class="fit drawer-bg text-white">
+        <div>
+          <q-list padding>
+            <q-item
+              dense
+              to="Dances"
+              clickable
+              v-ripple
+              @click="link = 'Dances'"
+              active-class="my-menu-link"
+            >
+              <q-item-section avatar>
+                <q-img
+                  style="height: 48px; width: 38px"
+                  src="~assets/logo/icon.png"
+                />
+              </q-item-section>
 
-                <q-item-section class="text-h6">
-                  Dances
-                </q-item-section>
-              </q-item>
+              <q-item-section class="text-h6">
+                Dances
+              </q-item-section>
+            </q-item>
 
-              <q-separator />
+            <q-separator />
 
-              <q-item
-                to="Songs"
-                clickable
-                v-ripple
-                :active="link === 'Songs'"
-                @click="link = 'Songs'"
-                active-class="my-menu-link"
-              >
-                <q-item-section avatar>
-                  <q-img
-                    style="height: 70px; width: 70px"
-                    src="~assets/icon.png"
-                  />
-                </q-item-section>
+            <q-item
+              to="Songs"
+              clickable
+              v-ripple
+              @click="link = 'Songs'"
+              active-class="my-menu-link"
+            >
+              <q-item-section avatar>
+                <q-img
+                  style="height: 48px; width: 38px"
+                  src="~assets/logo/icon.png"
+                />
+              </q-item-section>
 
-                <q-item-section class="text-h6">
-                  Songs
-                </q-item-section>
-              </q-item>
+              <q-item-section class="text-h6">
+                Songs
+              </q-item-section>
+            </q-item>
 
-              <q-separator />
+            <q-separator />
 
-              <q-item
-                to="Instruments"
-                clickable
-                v-ripple
-                :active="link === 'Instruments'"
-                @click="link = 'Instruments'"
-                active-class="my-menu-link"
-              >
-                <q-item-section avatar>
-                  <q-img
-                    style="height: 70px; width: 70px"
-                    src="~assets/icon.png"
-                  />
-                </q-item-section>
+            <q-item
+              to="Instruments"
+              clickable
+              v-ripple
+              @click="link = 'Instruments'"
+              active-class="my-menu-link"
+            >
+              <q-item-section avatar>
+                <q-img
+                  style="height: 48px; width: 38px"
+                  src="~assets/logo/icon.png"
+                />
+              </q-item-section>
 
-                <q-item-section class="text-h6">
-                  Instruments
-                </q-item-section>
-              </q-item>
+              <q-item-section class="text-h6">
+                Instruments
+              </q-item-section>
+            </q-item>
 
-              <q-separator />
+            <q-separator />
 
-              <q-item
-                to="Pictures"
-                clickable
-                v-ripple
-                :active="link === 'Pictures'"
-                @click="link = 'Pictures'"
-                active-class="my-menu-link"
-              >
-                <q-item-section avatar>
-                  <q-img
-                    style="height: 70px; width: 70px"
-                    src="~assets/icon.png"
-                  />
-                </q-item-section>
+            <q-item
+              to="Pictures"
+              clickable
+              v-ripple
+              @click="link = 'Pictures'"
+              active-class="my-menu-link"
+            >
+              <q-item-section avatar>
+                <q-img
+                  style="height: 48px; width: 38px"
+                  src="~assets/logo/icon.png"
+                />
+              </q-item-section>
 
-                <q-item-section class="text-h6">
-                  Pictures
-                </q-item-section>
-              </q-item>
-              <q-separator />
-            </q-list>
-          </div>
-        </q-img>
+              <q-item-section class="text-h6">
+                Pictures
+              </q-item-section>
+            </q-item>
+            <q-separator />
+          </q-list>
+        </div>
       </q-scroll-area>
     </q-drawer>
 
@@ -182,8 +185,9 @@ export default {
       link: "Songs",
       link: "Pictures",
       link: "Instruments",
-      link: "Dances"
-};
+      link: "Dances",
+      text: ""
+    };
   }
 };
 </script>
@@ -193,6 +197,17 @@ export default {
   color: orange;
 }
 .bg-img {
- Background-image: url("~assets/BackgroundSarimanok.png");
+  background-image: url("~assets/background/BackgroundSarimanok.png");
+  padding: 0px;
+}
+.header-bg {
+  background-image: url("~assets/background/TribalPattern.jpg");
+  background-position: center;
+  box-shadow: 0 0 0 1000px rgb(0 0 0 / 45%) inset;
+}
+.drawer-bg {
+  background-image: url("~assets/background/TribalPattern.jpg");
+  background-position-y: center;
+  box-shadow: 0 0 0 1000px rgb(0 0 0 / 45%) inset;
 }
 </style>
