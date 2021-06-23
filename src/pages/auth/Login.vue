@@ -63,6 +63,7 @@
 
         <q-card-actions>
           <q-btn
+            rounded
             icon="login"
             class="full-width"
             label="login"

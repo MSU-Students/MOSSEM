@@ -16,6 +16,11 @@ const routes = [
         path: "/",
         name: "landing-page",
         component: Landingpage,
+      },
+      {
+        path: "login",
+        name: "login-page",
+        component: Login,
       }       
     ],
   },
@@ -23,11 +28,7 @@ const routes = [
     path: "/",
     component: MainLayout,
     children: [
-      {
-        path: "login",
-        name: "login-page",
-        component: Login,
-      },
+      
       {
         path: "repositorypage",
         name: "repository-page",

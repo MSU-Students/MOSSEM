@@ -1,6 +1,8 @@
 <template>
   <q-layout view="hHh lpR fff">
-    <q-header class="backdrop-filter text-white">
+    <q-header 
+    v-if="this.$route.name != 'login-page'"
+    class="backdrop-filter text-white">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar style="font-size: 4.3em">
@@ -33,9 +35,9 @@
       </q-toolbar>
     </q-header>
 
-    <q-footer
-      class="backdrop-filter"
-    >
+    <q-footer 
+     v-if="this.$route.name != 'login-page'"
+    class="backdrop-filter">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>

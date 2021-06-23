@@ -171,7 +171,12 @@
     </q-drawer>
 
     <q-page-container>
+      <transition
+      appear
+      enter-active-class="animated fadeInLeft"
+      leave-active-class="animated fadeOutRight">
       <router-view> </router-view>
+    </transition>
     </q-page-container>
   </q-layout>
 </template>
@@ -210,4 +215,5 @@ export default {
   background-position-y: center;
   box-shadow: 0 0 0 1000px rgb(0 0 0 / 45%) inset;
 }
+
 </style>
