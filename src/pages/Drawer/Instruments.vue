@@ -1,8 +1,9 @@
 <template>
+
   <q-page
     class="q-pa-md"
-    style="background: linear-gradient(to right, #fe7a15 20%, #e8e8e8 100%);  "
   >
+  <q-scroll-area style="height: 650px; max-width: 3000px;">
     <div :class="$q.screen.lt.md ? '' : 'row'">
       <template>
         <div class="col-6 flex flex-center text-center">
@@ -10,10 +11,10 @@
             <q-card
               v-if="instrument.title == slide"
               :key="index"
-              class="my-card  no-shadow bg-transparent"
+              class="no-shadow bg-transparent"
             >
-              <q-card-section horizontal>
-                <q-card-section class="q-pt-xs">
+              <q-card-section class="bg-card" horizontal>
+                <q-card-section class="q-pt-xs text-white">
                   <div class="text-overline">Overline</div>
                   <div
                     class="text-h2 text-white text-capitalize q-mt-sm q-mb-xs"
@@ -61,6 +62,7 @@
         </div>
       </template>
     </div>
+    </q-scroll-area>
   </q-page>
 </template>
 
@@ -99,4 +101,11 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+
+.bg-img {
+  background-image: url("~assets/background/BackGroundBlur.jpg");
+  padding: 0px;
+}
+</style>

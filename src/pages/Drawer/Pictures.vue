@@ -28,6 +28,7 @@
       </div>
 
       <q-dialog
+        class="shadow-24"
         v-model="showImage"
         transition-show="flip-down"
         transition-hide="flip-up"

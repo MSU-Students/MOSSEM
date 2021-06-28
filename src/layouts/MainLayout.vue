@@ -197,9 +197,11 @@ export default {
 <style scoped>
 .my-menu-link {
   color: orange;
+  background: #ffffff46;
+  
 }
 .bg-img {
-  background-image: url("~assets/background/BackgroundSarimanok.png");
+  background-image: url("~assets/background/BackGroundBlur.jpg");
   padding: 0px;
 }
 .header-bg {
