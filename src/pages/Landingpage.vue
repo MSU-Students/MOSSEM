@@ -2,9 +2,13 @@
   <q-page>
     <div class="q-gutter-md">
       <div class="row justify-between">
+        <transition
+                appear
+                enter-active-class="animated fadeInUp"
+              >
         <q-parallax
           src="~assets/background/landingpage.jpg"
-            :height="750">
+            :height="1150">
           <h1 class="text-white">
             Sining Pananadem
           </h1>
@@ -12,6 +16,7 @@
             A Web-Based Musical Arts Repository System for Sining Pananadem Cultural Group of MSU-MARAWI
           </h3>
         </q-parallax>
+        </transition>
       </div>
     </div>
     <div class="q-gutter-md">

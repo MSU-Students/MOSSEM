@@ -14,7 +14,8 @@
     "quasar": "^1.0.0"
   },
   "devDependencies": {
-    "@quasar/app": "^2.0.0"
+    "@quasar/app": "^2.0.0",
+    "@quasar/quasar-app-extension-qmediaplayer": "^1.2.1"
   },
   "browserslist": [
     "ie >= 11",

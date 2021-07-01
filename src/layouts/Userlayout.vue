@@ -1,43 +1,47 @@
 <template>
   <q-layout view="hHh lpR fff">
-    <q-header 
-    v-if="this.$route.name != 'login-page'"
-    class="backdrop-filter text-white">
-      <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar style="font-size: 4.3em">
-            <img src="~assets/logo/splogo.png" />
-          </q-avatar>
-          Home
-        </q-toolbar-title>
-        <q-space />
-        <q-btn
-          icon="dashboard"
-          flat
-          dense
-          style="font-size: 1.2em"
-          color="orange"
-          label="Sining Pananadem"
-          text-color="white"
-          to="Dances"
-        >
-        </q-btn>
+    <transition
+      appear
+      enter-active-class="animated fadeInDown"
+    >
+      <q-header
+        v-if="this.$route.name != 'login-page'"
+        class="backdrop-filter text-white"
+      >
+        <q-toolbar>
+          <q-toolbar-title>
+            <q-avatar style="font-size: 4.3em">
+              <img src="~assets/logo/splogo.png" />
+            </q-avatar>
+            Home
+          </q-toolbar-title>
+          <q-space />
+          <q-btn
+            icon="dashboard"
+            flat
+            dense
+            style="font-size: 1.2em"
+            color="orange"
+            label="Sining Pananadem"
+            text-color="white"
+            to="Dances"
+          >
+          </q-btn>
 
-        <q-btn
-          style="font-size: 1.2em"
-          icon="person"
-          flat
-          label="Login"
-          text-color="white"
-          to="login"
-        >
-        </q-btn>
-      </q-toolbar>
-    </q-header>
+          <q-btn
+            style="font-size: 1.2em"
+            icon="person"
+            flat
+            label="Login"
+            text-color="white"
+            to="login"
+          >
+          </q-btn>
+        </q-toolbar>
+      </q-header>
+    </transition>
 
-    <q-footer 
-     v-if="this.$route.name != 'login-page'"
-    class="backdrop-filter">
+    <q-footer v-if="this.$route.name != 'login-page'" class="backdrop-filter">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
@@ -49,7 +53,12 @@
     </q-footer>
 
     <q-page-container class="user-layout">
+      <transition
+        appear
+        leave-active-class="animated fadeOut"
+      >
       <router-view />
+      </transition>
     </q-page-container>
   </q-layout>
 </template>

@@ -13,9 +13,31 @@
     --animate-duration: 900ms;
     --animate-delay: 2s;
 }
+.fadeInRight{
+    --animate-duration: 900ms;
+    --animate-delay: 2s;
+}
 
 .fadeOutRight{
-    --animate-duration: 400ms;
+    --animate-duration: 900ms;
     --animate-delay: 2s;
 
+}
+.fadeOut{
+    --animate-duration: 300ms;
+    --animate-delay: 2s;
+}
+
+.fadeIn{
+    --animate-duration: 500ms;
+    --animate-delay: 2s;
+}
+
+.fadeInUp{
+    --animate-duration: 900ms;
+    --animate-delay: 2s;
+}
+.fadeInDown{
+    --animate-duration: 900ms;
+    --animate-delay: 2s;
 }

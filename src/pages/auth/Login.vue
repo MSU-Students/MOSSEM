@@ -1,30 +1,37 @@
 <template>
   <q-page class="flex flex-center bg-img q-px-md">
-    
     <q-card
       class="shadow-24 text-white  flex flex-center"
       style="background: linear-gradient(to top right, #fe7a15 55%, #d9d9d9 110%);"
       :class="$q.screen.lt.md ? '' : 'row'"
       :style="$q.screen.lt.md ? '' : 'width: 800px;'"
     >
+      <transition
+        appear
+        enter-active-class="animated fadeInRight"
+      >
       <q-img
-        transition = "slide-left"
         v-if="!$q.screen.lt.md"
         src="~assets/background/splogincover.jpg"
         class="col-6 login-photo"
       />
+      </transition>
 
-      <div class="q-px-xl" :class="$q.screen.lt.md ? ' q-pa-xl' : 'login-field'">
-        <q-img
-        transition="slide-up"
-        style="max-width: 400px; height: 170px;"
-        src="~assets/logo/splogo.png"
-      />
+      <div
+        class="q-px-xl"
+        :class="$q.screen.lt.md ? ' q-pa-xl' : 'login-field'"
+      >
+        <transition appear enter-active-class="animated fadeInUp">
+          <q-img
+            style="max-width: 400px; height: 170px;"
+            src="~assets/logo/splogo.png"
+          />
+        </transition>
         <div class="text-center text-h3">
           Login
         </div>
 
-        <q-card-section class='q-gutter-y-md'>
+        <q-card-section class="q-gutter-y-md">
           <q-input
             v-model="user.username"
             label="Username"
@@ -99,6 +106,6 @@ export default {
   width: 50%;
 }
 .bg-img {
- Background-image: url("~assets/background/loginbackground.jpg");
+  background-image: url("~assets/background/loginbackground.jpg");
 }
 </style>

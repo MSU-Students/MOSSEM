@@ -169,8 +169,8 @@
     <q-page-container class="custom-page-container">
       <transition
         appear
-        enter-active-class="animated fadeInLeft"
-        leave-active-class="animated fadeOutRight"
+        enter-active-class="animated fadeIn"
+        leave-active-class="animated fadeOut"
       >
         <router-view> </router-view>
       </transition>
@@ -196,8 +196,7 @@ export default {
 
 <style scoped>
 .my-menu-link {
-  color: orange;
-  background: #ffffff46;
+  background: linear-gradient(to top, #68130288 1%, #8b8373a2 64%);
   
 }
 .bg-img {
