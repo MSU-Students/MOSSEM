@@ -8,7 +8,6 @@
               INSTRUMENTS
             </div>
             <template v-for="(instrument, index) in instruments">
-              <transition appear enter-active-class="animated fadeInUp" >
               <q-card
                 v-if="instrument.title == slide"
                 :key="index"
@@ -28,14 +27,12 @@
                   </q-card-section>
                 </q-card-section>
               </q-card>
-              </transition>
             </template>
           </div>
           <div class="col-6">
             <transition
               appear
               enter-active-class="animated fadeInRight"
-              leave-active-class="animated fadeOutRight"
             >
               <q-carousel
                 v-model="slide"

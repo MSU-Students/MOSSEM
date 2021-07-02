@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="bg-img">
     <div class="q-gutter-md">
       <div class="row justify-between ">
         <div class="col">
@@ -8,54 +8,89 @@
             src="~assets/background/landingpage.jpg"
             :ratio="16 / 9"
           >
-            <transition appear enter-active-class="animated fadeInUp">
-              <div class="transparent q-mt-xl">
-                <div
-                  :class="
-                    $q.screen.lt.md
-                      ? 'col text-center text-h6 text-white text-weight-bolder'
-                      : 'col text-left text-h4 text-white text-weight-bolder q-mt-xl q-pt-lg'
-                  "
-                >
-                  <h1 v-if="!$q.screen.lt.md" class="text-center text-white ">
-                    Sining Pananadem
-                  </h1>
-                  <div v-else="$q.screen.lt.md" class="q-mt-xl q-pt-md">
-                    Sining pananadem
-                  </div>
-                  <h3 v-if="!$q.screen.lt.md" class="text-white text-center">
-                    A Web-Based Musical Arts Repository System for Sining
-                    Pananadem Cultural Group of MSU-MARAWI
-                  </h3>
-                  <div v-else="$q.screen.lt.md" class="text-h6">
-                    A Web-Based Musical Arts Repository System for Sining
-                    Pananadem Cultural Group of MSU-MARAWI
-                  </div>
+            <div class="transparent q-mt-xl">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                :class="
+                  $q.screen.lt.md
+                    ? 'col text-center text-h6 text-white text-weight-bolder'
+                    : 'col text-left text-h4 text-white text-weight-bolder q-mt-xl q-pt-lg'
+                "
+              >
+                <h1 v-if="!$q.screen.lt.md" class="text-center text-white ">
+                  Sining Pananadem
+                </h1>
+                <div v-else="$q.screen.lt.md" class="q-mt-xl q-pt-md">
+                  Sining pananadem
+                </div>
+                <h3 v-if="!$q.screen.lt.md" class="text-white text-center">
+                  A Web-Based Musical Arts Repository System for Sining
+                  Pananadem Cultural Group of MSU-MARAWI
+                </h3>
+                <div v-else="$q.screen.lt.md" class="text-h6">
+                  A Web-Based Musical Arts Repository System for Sining
+                  Pananadem Cultural Group of MSU-MARAWI
                 </div>
               </div>
-            </transition>
+            </div>
           </q-img>
         </div>
       </div>
-      <div class="q-pl-xl q-pt-xl ">
-        <q-img
-          src="~assets/background/landingpage.jpg"
-          style="max-width: 900px; height: 400px;"
-          :fit="mode"
-        >
-        </q-img>
-        <transition appear enter-active-class="animated fadeInUp">
-        <div>
-          <q-card class="my-card">
-            <q-card-section class="bg-primary text-white">
-              <div class="text-h6">Our Changing Planet</div>
-              <div class="text-subtitle2">by John Doe</div>
+      <div class="row">
+        <div class="q-pl-xl q-pt-xl col">
+          <q-img
+            src="~assets/background/landingpage.jpg"
+            style="max-width: 1000px; height: 400px; "
+            :fit="mode"
+          >
+          </q-img>
+        </div>
+        <div data-aos="fade-up" data-aos-duration="2000">
+          <q-card class="my-card no-shadow col">
+            <q-card-section class="q-gutter-md text-white">
+              <div class="text-h4 ">What Is Sining Pananadem?</div>
+              <div class="text-subtitle2">
+                Sining Pananadem is composed of young M’ranao artists, and its
+                primary objectives are: to Preserve, Promote, to Protect and to
+                Popularize the M’ranao indigenous culture of the south, it was
+                established to counter act the effects of the exploitative force
+                of westernization, moreover, the Sining Pananadem is aimed at
+                promoting a culture of peace through cultural solidarity among
+                all Filipino and the rest of the citizens of the world.
+              </div>
             </q-card-section>
           </q-card>
         </div>
-        </transition>
       </div>
-      <div>
+      <div class="row">
+        <div class="q-pl-xl q-pt-xl col">
+          <q-img
+            src="~assets/background/landingpage.jpg"
+            style="max-width: 1000px; height: 400px; position: relative; top: 10px; left: 450px;"
+            :fit="mode"
+          >
+          </q-img>
+        </div>
+        <div data-aos="fade-up" data-aos-duration="2000">
+          <q-card class="my-card-next no-shadow col">
+            <q-card-section class="q-gutter-md text-white">
+              <div class="text-h4 ">What Is Sining Pananadem?</div>
+              <div class="text-subtitle2">
+                Sining Pananadem is composed of young M’ranao artists, and its
+                primary objectives are: to Preserve, Promote, to Protect and to
+                Popularize the M’ranao indigenous culture of the south, it was
+                established to counter act the effects of the exploitative force
+                of westernization, moreover, the Sining Pananadem is aimed at
+                promoting a culture of peace through cultural solidarity among
+                all Filipino and the rest of the citizens of the world.
+              </div>
+            </q-card-section>
+          </q-card>
+        </div>
+      </div>
+
+      <div class="q-pt-xl">
         <q-timeline :layout="layout" color="secondary">
           <q-timeline-entry heading>
             Timeline heading
@@ -194,8 +229,14 @@
 
 <script>
 export default {
-  data() {
-    return {};
+  computed: {
+    layout() {
+      return this.$q.screen.lt.sm
+        ? "dense"
+        : this.$q.screen.lt.md
+        ? "comfortable"
+        : "loose";
+    }
   }
 };
 </script>
@@ -205,8 +246,26 @@ export default {
   background-image: url("~assets/background/landingpage.jpg");
   background-position: center;
 }
-.my-card {
+
+.my-card-next {
+  background: transparent;
   width: 100%;
-  max-width: 350px;
+  max-width: 500px;
+  position: relative;
+  top: 150px;
+  left: -750px;
+}
+
+.my-card {
+  background: transparent;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  top: 140px;
+  left: -200px;
+}
+.bg-img {
+  background-image: url("~assets/background/BackGroundBlur.jpg");
+  padding: 0px;
 }
 </style>

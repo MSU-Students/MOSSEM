@@ -65,11 +65,6 @@
         </q-carousel>
       </transition>
       <template v-for="(dances, index) in dancesContent">
-        <transition
-          appear
-          enter-active-class="animated fadeInLeft"
-          leave-active-class="animated fadeOutRight"
-        >
           <q-card
             class="bg-img"
             v-if="dances.videoName == slide"
@@ -85,7 +80,6 @@
               </div>
             </q-card-section>
           </q-card>
-        </transition>
       </template>
     </div>
   </q-page>
