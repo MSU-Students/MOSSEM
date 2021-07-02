@@ -1,18 +1,18 @@
 <template>
   <q-page class="q-pa-md ">
-    <q-scroll-area style="height: 650px; max-width: 3000px;">
+    <q-scroll-area style="height: 700px;">
       <div :class="$q.screen.lt.md ? '' : 'row'">
         <template>
           <div class=" col-6 flex flex-center text-center">
+            <div :class="$q.screen.lt.md ? 'text-h4 text-center text-white': 'absolute-top text-white text-h2 text-center'">
+              INSTRUMENTS
+            </div>
             <template v-for="(instrument, index) in instruments">
-              <!-- <transition appear enter-active-class="animated fadeInUp"> -->
-              <div class="absolute-top text-white text-h2 text-center">
-                INSTRUMENTS
-              </div>
+              <transition appear enter-active-class="animated fadeInUp" >
               <q-card
                 v-if="instrument.title == slide"
                 :key="index"
-                class="abosulute no-shadow bg-transparent"
+                class="no-shadow bg-transparent"
               >
                 <q-card-section class="bg-card" horizontal>
                   <q-card-section class="q-pt-xs text-white">
@@ -28,7 +28,7 @@
                   </q-card-section>
                 </q-card-section>
               </q-card>
-              <!-- </transition> -->
+              </transition>
             </template>
           </div>
           <div class="col-6">

@@ -24,7 +24,7 @@
         <transition appear enter-active-class="animated fadeInUp">
           <q-img
             style="max-width: 400px; height: 170px;"
-            src="~assets/logo/splogo.png"
+            src="~assets/logo/splogo1.png"
           />
         </transition>
         <div class="text-center text-h3">
@@ -76,7 +76,7 @@
             label="login"
             color="white"
             text-color="primary"
-            to="/Dances"
+            to="/Homeadmin"
           >
           </q-btn>
         </q-card-actions>
@@ -107,5 +107,7 @@ export default {
 }
 .bg-img {
   background-image: url("~assets/background/loginbackground.jpg");
+  height: 100%;
+  width: 100%;
 }
 </style>

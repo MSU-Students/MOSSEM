@@ -4,6 +4,11 @@
     padding-bottom: 0 !important;
 }
 
+
+.test-container{
+    position: inherit;
+}
+
 .custom-page-container{
     position: fixed;
     width: inherit;
@@ -29,15 +34,15 @@
 }
 
 .fadeIn{
-    --animate-duration: 500ms;
+    --animate-duration: 1900ms;
     --animate-delay: 2s;
 }
 
 .fadeInUp{
-    --animate-duration: 900ms;
+    --animate-duration: 1000ms;
     --animate-delay: 2s;
 }
 .fadeInDown{
-    --animate-duration: 900ms;
+    --animate-duration: 1300ms;
     --animate-delay: 2s;
 }

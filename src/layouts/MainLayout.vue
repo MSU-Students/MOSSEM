@@ -33,8 +33,8 @@
         </q-input>
         <!-- Menu -->
         <q-btn
+          v-if="this.$route.name == 'Homeadmin-page' "
           outline
-          v-if="this.$route.name != 'login-page'"
           icon="person"
           label="Account"
           text-color="white"
@@ -52,7 +52,6 @@
         </q-btn>
         <q-btn
           flat
-          v-if="this.$route.name != 'login-page'"
           icon="home"
           label="Home"
           color="orange"
@@ -71,6 +70,7 @@
       :mini="miniState"
       @mouseover="miniState = false"
       @mouseout="miniState = true"
+      :height="200"
       :width="250"
       :breakpoint="500"
       elevated

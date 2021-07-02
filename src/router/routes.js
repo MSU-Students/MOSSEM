@@ -2,7 +2,7 @@ import UserLayout from "src/layouts/UserLayout.vue";
 import Landingpage from "src/pages/LandingPage.vue";
 import MainLayout from "src/layouts/MainLayout.vue";
 import Login from "src/pages/auth/Login.vue";
-import Repositorypage from "src/pages/RepositoryPage.vue";
+import Homeadmin from "src/pages/Homeadmin/Homeadmin.vue";
 import Dances from "src/pages/Drawer/Dances.vue";
 import Instruments from "src/pages/Drawer/Instruments.vue";
 import Songs from "src/pages/Drawer/Songs.vue";
@@ -28,12 +28,12 @@ const routes = [
     path: "/",
     component: MainLayout,
     children: [
-      
       {
-        path: "repositorypage",
-        name: "repository-page",
-        component: Repositorypage,
+        path: "Homeadmin",
+        name: "Homeadmin-page",
+        component: Homeadmin,
       },
+
       {
         path: "Dances",
         name: "Dances-page",
