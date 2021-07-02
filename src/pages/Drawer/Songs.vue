@@ -1,6 +1,6 @@
 <template>
   <q-page class="q-pa-md">
-    <q-scroll-area style="height: 650px; max-width: 3000px;">
+    <q-scroll-area style="height: 700px; max-width: 3000px;">
       <div :class="$q.screen.lt.md ? '' : 'row'">
         <template>
           <div class="col-6">

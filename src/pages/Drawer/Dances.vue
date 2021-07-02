@@ -64,7 +64,6 @@
           </template>
         </q-carousel>
       </transition>
-
       <template v-for="(dances, index) in dancesContent">
         <transition
           appear

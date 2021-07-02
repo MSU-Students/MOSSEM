@@ -1,5 +1,5 @@
 <template>
-  <q-scroll-area style="height: 650px; max-width: 3000px;">
+  <q-scroll-area style="height: 750px; max-width: 3000px;">
     <div class="q-pa-md">
       <div class="row justify-center q-gutter-sm">
         <q-intersection
