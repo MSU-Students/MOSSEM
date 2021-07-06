@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center bg-img q-px-md">
     <q-card
-      class="shadow-24 text-white  flex flex-center"
+      class="shadow-24 text-white flex flex-center Glassmorphismlogin"
       style="background: linear-gradient(to top right, #fe7a15 55%, #d9d9d9 110%);"
       :class="$q.screen.lt.md ? '' : 'row'"
       :style="$q.screen.lt.md ? '' : 'width: 800px;'"
@@ -14,7 +14,7 @@
         v-if="!$q.screen.lt.md"
         src="~assets/background/splogincover.jpg"
         class="col-6 login-photo"
-      />
+              />
       </transition>
 
       <div
@@ -110,4 +110,16 @@ export default {
   height: 100%;
   width: 100%;
 }
+
+.Glassmorphismlogin
+{
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter:blur(5px);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+background-image: linear-gradient(155deg, rgba(255, 255, 255, 0.36) 0%, rgba(255, 255, 255, 0) 100%);
+border-bottom: 1.8px solid rgba( 255, 255, 255, 0.79 );
+border-right: 1.8px solid rgba( 255, 255, 255, 0.79 );
+text-shadow: 2px 2px 10px #000000;
+}
+
 </style>

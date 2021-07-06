@@ -28,6 +28,7 @@
               <q-btn
                 icon="dashboard"
                 outline
+                class="radius"
                 dense
                 style="font-size: 1.2em"
                 color="orange"

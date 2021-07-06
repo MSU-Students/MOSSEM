@@ -14,7 +14,7 @@
             persistent
             transition-show="flip-down"
             transition-hide="flip-up"
-            class="q-ma-sm shadow-24"
+            class="q-ma-sm radius"
             @click="showDialog(index)"
           >
             <img src="~assets/background/TribalPattern.jpg" />

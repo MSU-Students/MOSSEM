@@ -15,7 +15,7 @@
           infinite
           :fullscreen.sync="fullscreen"
           height="310px"
-          class=" text-white shadow-24 transparent rounded-borders"
+          class=" text-white shadow-24 transparent radius"
         >
           <template v-slot:navigation-icon="{ active, btnProps, onClick }">
             <q-btn
@@ -66,7 +66,7 @@
       </transition>
       <template v-for="(dances, index) in dancesContent">
           <q-card
-            class="bg-img"
+            class="bg-img radius"
             v-if="dances.videoName == slide"
             :key="index"
             style="width: 80vw"

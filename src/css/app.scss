@@ -1,4 +1,22 @@
 // app global css in SCSS form
+@font-face {
+    font-family: 'custom_font' ;
+    src: url("../css/Font/mont_bold.otf");
+    src: url("../css/Font/mont_reg.otf");
+    src: url("../css/Font/nova_reg.otf");
+}
+
+.font1{
+    font-family: 'custom_font' , 'mont_reg';
+}
+.font2{
+    font-family: 'custom_font' , 'nova_reg';
+}
+
+.font3{
+    font-family: 'custom_font' , 'mont_bold';
+}
+
 .q-page-container.user-layout {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -13,13 +31,16 @@
     position: fixed;
     width: inherit;
 }
+.custom-enter-active {
+    transition: translateX(10px) .3s ease;
+  }
 
 .fadeInLeft{
-    --animate-duration: 900ms;
+    --animate-duration: 1500ms;
     --animate-delay: 2s;
 }
 .fadeInRight{
-    --animate-duration: 900ms;
+    --animate-duration: 1500ms;
     --animate-delay: 2s;
 }
 
@@ -34,7 +55,7 @@
 }
 
 .fadeIn{
-    --animate-duration: 1900ms;
+    --animate-duration: 2500ms;
     --animate-delay: 2s;
 }
 
